@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CardTitle, Media } from 'reactstrap'
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CarTitle } from 'reactstrap'
+import DishDetails from './DishDetails'
 
-class Menu extends Component {
+class Menu extends React.Component {
 
     constructor(props) {
         super(props)
@@ -12,28 +13,32 @@ class Menu extends Component {
         }
     }
 
+    componentDidMount() {
+        console.log('Mounting..')
+    }
+
     onDishSelect(dish) {
         this.setState({ selectedDish: dish })
     }
 
-    renderDish(dish) {
-        if (dish != null) {
-            return (
-                <Card>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardBody>
-                        <CardTitle>{dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
-                    </CardBody>
-                </Card>
-            )
-        }
-        else {
-            return (
-                <div></div>
-            )
-        }
-    }
+    // renderDish(dish) {
+    //     if (dish != null) {
+    //         return (
+    //             <Card>
+    //                 <CardImg width="100%" src={dish.image} alt={dish.name} />
+    //                 <CardBody>
+    //                     <CardTitle>{dish.name}</CardTitle>
+    //                     <CardText>{dish.description}</CardText>
+    //                 </CardBody>
+    //             </Card>
+    //         )
+    //     }
+    //     else {
+    //         return (
+    //             <div></div>
+    //         )
+    //     }
+    // }
 
 
     render() {
@@ -57,7 +62,8 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                    {this.renderDish(this.state.selectedDish)}
+                    <DishDetails dish={this.state.selectedDish} />
+                    {/* {this.renderDish(this.state.selectedDish)} */}
                 </div>
             </div>
         )
