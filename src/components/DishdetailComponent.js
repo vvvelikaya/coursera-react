@@ -1,8 +1,6 @@
 import React from 'react'
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap'
 
-
-
 function RenderDish({ dish }) {
     console.log('Dishdetail Component render invoked')
     return (
@@ -17,7 +15,6 @@ function RenderDish({ dish }) {
         </div>
     )
 }
-
 
 function RenderComments({ comments }) {
     if (comments != null) {
