@@ -48,7 +48,7 @@ class Header extends React.Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/contactus">
-                                        <span className="fa fa-address fa-lg"></span>Contact Us
+                                        <span className="fa fa-address-card fa-lg"></span>Contact Us
                                </NavLink>
                                 </NavItem>
                             </Nav>
